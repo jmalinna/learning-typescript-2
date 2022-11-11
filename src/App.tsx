@@ -4,7 +4,7 @@ import TodoForm from './components/TodoForm';
 import 'antd/dist/antd.css';
 
 function App() {
-  const todoItems = [{ id: 't1', text: 'Finish the course'}];
+  const todoItems = ['Finish the course'];
 
   return (
     <div className="App">
