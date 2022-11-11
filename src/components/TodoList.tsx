@@ -7,7 +7,7 @@ interface TodoListProps {
 const TodoList = ({ todoItems }: TodoListProps) => {
   return (
     <ul>
-      {todoItems.map(item => <li key={item.id}>(item.text)</li>)}
+      {todoItems.map(item => <li key={item.id}>{item.text}</li>)}
     </ul>
   )
 };
