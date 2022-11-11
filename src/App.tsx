@@ -6,9 +6,13 @@ import 'antd/dist/antd.css';
 function App() {
   const [todoItems, setTodoItems] = useState<string[]>([]);
 
+  const handleTodoItemsAdding = (newItem: string) => {
+    setTodoItems(prevTodoItems => [...prevTodoItems, newItem]);
+  }
+
   return (
     <div className="App">
-      <TodoForm todoItems={todoItems} setTodoItems={setTodoItems} />
+      <TodoForm addTodoItems={handleTodoItemsAdding} />
       <TodoList todoItems={todoItems} />
     </div>
   );

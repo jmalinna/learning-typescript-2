@@ -8,14 +8,13 @@ interface Values {
 }
 
 interface TodoFormProps {
-  todoItems: string[];
-  setTodoItems: (items: string[]) => void;
+  addTodoItems: (newItem: string) => void;
 }
 
-const TodoForm = ({ todoItems, setTodoItems }: TodoFormProps) => {
+const TodoForm = ({ addTodoItems }: TodoFormProps) => {
   const handleSubmit = (values: Values) => {
     const newItem = values.todo.item;
-    setTodoItems([...todoItems, newItem]);
+    addTodoItems(newItem);
   }
 
   return (
