@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
+import 'antd/dist/antd.css';
 
 function App() {
   const todoItems = [{ id: 't1', text: 'Finish the course'}];

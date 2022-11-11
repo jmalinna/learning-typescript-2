@@ -1,22 +1,30 @@
-import React, { useRef } from 'react';
+import React from 'react';
+import { Form, Input, Button, Row, Col } from 'antd';
   
-const TodoForm = () => {
-  const textInputRef = useRef<HTMLInputElement>(null);
+interface Values {
+  todo: {
+    item: string,
+  }
+}
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const enteredText = textInputRef.current!.value;
-    console.log('enteredText=', enteredText);
+const TodoForm = () => {
+  const handleSubmit = (values: Values) => {
+    console.log(values);
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="todo-item-input"></label>
-        <input type="text" id="todo-item-input" ref={textInputRef} />
-      </div>
-      <button type="submit">Add todo</button>
-    </form>
+    <Row justify="center">
+      <Col span={8}>
+        <Form onFinish={handleSubmit}>
+          <Form.Item name={['todo', 'item']}>
+            <Input />
+          </Form.Item>
+          <Form.Item>
+            <Button type="primary" htmlType="submit">Add todo</Button>
+          </Form.Item>
+        </Form>
+      </Col>
+    </Row>
   )
 };
 export default TodoForm;
